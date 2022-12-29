@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>T</title>
+  </head>
+  <style >
+    body{
+               padding: 10px 10px;
+           }
+          h1{
+             text-align:center;
+           }
+
+           .head{
+              display:grid;grid-template-columns: 50% 50%;
+            }
+
+           .formdesign {
+               font-size: 20px;
+
+           }
+
+           select{
+             width: 50%;
+             padding: 12px 20px;
+             border: 1px solid blue;
+             margin: 14px;
+             border-radius: 4px;
+             font-size: 15px;
+             background-color:#f2f2f2;
+
+          }
+
+           .formdesign input{width: 50%;
+           padding: 12px 20px;
+           border: 1px solid blue;
+           margin: 14px;
+           border-radius: 4px;
+           font-size: 15px;
+           background-color:#f2f2f2;
+
+           }
+
+           .formerror {
+               color: red;
+           }
+
+           #btn1,#addBtn{
+             border-radius: 9px;
+             width: 100px;
+             height: 50px;
+             font-size: 22px;
+             margin: 22px 22px;
+           }
+           .l1{
+             width: 50%;
+             padding: 12px 20px;
+             border: 1px solid blue;
+             margin: 14px;
+             border-radius: 4px;
+             font-size: 15px;
+           }
+
+           .output{
+             background-color: black;
+             color: white;
+             border:solid 1px lightgrey;
+             width: 100%;height: 170PX;font-size: 35PX;padding-left: 30PX;
+           }
+           textarea{
+             width: auto;height:25px;
+             padding: 12px 20px;
+             border: 1px solid blue;
+             margin: 14px;
+             border-radius: 4px;
+             font-size: 15px;background-color:#f2f2f2;
+
+           }
+           .cardb{
+             display: flex;
+           }
+           .card-bodys{
+             text-align: center;justify-content: center;
+             display: grid;grid-template-columns: 50% 50%;
+           }
+           .noteCard {
+             text-align: center;justify-content: center;
+           }
+           .color{
+             background-color: #ff9999;
+           }
+           .addBtnP:hover{
+             background-color: black;
+             text-align: center;
+           }
+           .Outline{
+             border:2px solid black;padding-left: 5px;
+           }
+             notesElm.innerHTML{color: white;}
+
+             @media(max-width:467px)
+             {
+               .head{display:block;}
+             }
+  </style>
+
+  <body style="background-color:#ccebff;border:4px solid black">
+    <div class="Outline">
+<h1 style="font-family: 'Noto Sans', sans-serif;"><u>APOGEE 2023</u></h1>
+<div class="head" >
+
+
+<div class="container my-3">
+        <h1 style="color:#205295;font-family: 'Noto Sans', sans-serif;"><u>EVENT DETAILS</u></h1>
+        <form aciton ="/myaction.php" name="myForm" onsubmit="return validateForm()" method="post">
+        <div class="card">
+            <div class="cardb">
+                <p class="cardT"style="font-size:20px;">Event Name :</p>
+                <div class="form-group">
+                  <textarea class="form-control" id="addTxt"placeholder="Enter Event Name" ></textarea>
+                </div>
+              </div>
+            </div>
+
+            <div class="formdesign" id="dep">
+
+              <label for="Department">Department :</label>
+              <select id="deptxt"placeholder="Department">
+              <option value="-1">  Department  </option>
+              <option value="1">  ADP   </option>
+              <option value="2">  DVM   </option>
+              <option value="3">  PCR   </option>
+              <option value="4">  SPONZ   </option>
+              <option value="5">  FIREWALLS </option>
+              <option value="6">  RecNAcc </option>
+              <option value="7">  DOPE  </option>
+              <option value="8">  CONTROLS </option>
+            </select>
+
+            </div>
+
+            <div class="formdesign" id="date">
+                Event Date: <input type="date" name="fphones"placeholder="Enter date" required><b><span class="formerror"></span></b>
+            </div>
+
+
+            <div class="formdesign" id="time">
+                Start time: <input type="time" name="fpass" required><b><span class="formerror"</span></b>
+            </div>
+
+            <div class="formdesign" id="etime">
+              End time  : <input type="time" name="fcpass" required><b><span class="formerror"></span></b>
+            </div>
+          </div>
+
+          <div class="container2">
+            <h1 style="color:#205295;font-family: 'Noto Sans', sans-serif;"><u>CONTACT DETAILS</u></h1>
+            <div class="formdesign" id="name">
+                Name: <input type="text" name="fname"placeholder="Enter your name" required><b><span class="formerror"> </span></b>
+            </div>
+
+            <div class="formdesign" id="email">
+                Email: <input type="email" name="femail"placeholder="Enter your email" required><b><span class="formerror"> </span></b>
+            </div>
+
+            <div class="formdesign" id="phone">
+                Phone: <input type="phone" name="fphone"placeholder="Enter phone number" onkeyup="keyupfun()" required><br><b><span class="formerror"></span></b>
+            </div>
+
+            <div class="formdesign" id="pass">
+                Bits ID: <input type="text" name="passs" placeholder="2022XXPSNNNNP('X'for branch,'N'for no.)"required><br><b><span class="formerror"></span></b>
+            </div>
+          </div></div>
+        <div class="submit" style="display:flex ; justify-content:center">
+          <button class="btn" id="addBtn"style= " border-radius:15px;background-color:  #205295;  border: none;  color: white;  padding: 15px 23px;text-align: center;  text-decoration: none;  display: inline-block;  font-size: 16px;  margin: 4px 2px;cursor: pointer;">SUBMIT </button>
+</div>
+        </form>
+
+<div class="color" style="display:flex; flex-direction: column;  align-items: center;"
+
+<hr style="background-color:black;">
+        <h1 style="background-color:white;color: #205295;font-family: 'Noto Sans', sans-serif;"><u>Your Prefered event</u></h1>
+
+        <div id="notes" class="row container-fluid"> </div>
+</div></div>
+  </body>
+
+  <script>
+
+    function clearErrors(){
+
+    errors = document.getElementsByClassName('formerror');
+    for(let item of errors)
+    {
+        item.innerHTML = "";
+    }
+
+
+}
+function seterror(id, error){
+
+    element = document.getElementById(id);
+    element.getElementsByClassName('formerror')[0].innerHTML = error;
+
+}
+
+function validateForm(){
+    var returnval = true;
+    clearErrors();
+
+    var phone = document.forms['myForm']["fphone"].value;
+    if (phone.length != 10){
+        seterror("phone", "*Phone number should be of 10 digits!");
+        returnval = false;
+    }
+
+    var pass = document.forms['myForm']["passs"].value;
+
+
+   if(pass.search(/[2][0][10-20]+[A-B]+[0-9]+[P]+[S]+[0-9]{4}[P]/)==-1){
+     seterror("pass", "*Plz enter the correct format of your BITS Id ");
+     returnval = false;
+   }
+   if (pass.length!=13){
+       seterror("pass", "*Please enter the correct format of your BITS Id");
+       returnval = false;
+}
+
+
+
+   if(pass.search(/[0-9]/)==-1){
+     seterror("pass", "*password must contain numeric char");
+     returnval = false;
+
+   }
+
+    return returnval;
+}
+  console.log("Welcome to EVENT SYSTEM.");
+  showNotes();
+
+  // If user adds a note, add it to the localStorage
+  let addBtn = document.getElementById("addBtn");
+addBtn.addEventListener("click", function(e) {
+    let addTxt = document.getElementById("addTxt");
+    let notes = localStorage.getItem("notes");
+    if (notes == null) {
+      notesObj = [];
+    } else {
+      notesObj = JSON.parse(notes);
+    }
+    notesObj.push(addTxt.value);
+    localStorage.setItem("notes", JSON.stringify(notesObj));
+    addTxt.value = "";
+  //   console.log(notesObj);
+    showNotes();
+  });
+
+  // Function to show elements from localStorage
+  function showNotes() {
+    let notes = localStorage.getItem("notes");
+    if (notes == null) {
+      notesObj = [];
+    } else {
+      notesObj = JSON.parse(notes);
+    }
+    let html = "";
+    notesObj.forEach(function(element, index) {
+      html += `
+              <div class="noteCard my-2 mx-2 card" style="width: 18rem;">
+                      <div class="card-bodys">
+                          <h2 class="cardT"style="padding-left:10px;color:black;"><u>Event ${index + 1}</u></h2>
+                          <h3 class="card-text"style="color:black;"> ${element}</h3><br>
+                          <button id="${index}"onclick="deleteNote(this.id)" class="but1"style="border-radius:15px;background-color: #205295;  border: none;  color: white;  padding: 15px 15px;text-align: center;  text-decoration: none;  display: inline-block;  font-size: 16px;  margin: 4px 2px;cursor: pointer;">Delete Event</button>
+                      </div>
+                  </div>`;
+    });
+    let notesElm = document.getElementById("notes");
+    if (notesObj.length != 0) {
+      notesElm.innerHTML = html;
+    } else {
+      notesElm.innerHTML = `Nothing to show! Use "Add a Event" section above to add event.`;
+    }
+  }
+
+  // Function to delete a note
+  function deleteNote(index) {
+  //   console.log("I am deleting", index);
+
+    let notes = localStorage.getItem("notes");
+    if (notes == null) {
+      notesObj = [];
+    } else {
+      notesObj = JSON.parse(notes);
+    }
+
+    notesObj.splice(index, 1);
+    localStorage.setItem("notes", JSON.stringify(notesObj));
+    showNotes();
+  }
+  </script>
+  </html>
